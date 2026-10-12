@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudentHub - Students</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <div class="main">
+    <header id="topbar" class="topbar"></header>
+    <div class="content">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+        <h4 class="fw-bold mb-0">Students</h4>
+        <a id="addBtn" href="student-form.html" class="btn btn-brand"><i class="bi bi-plus-lg"></i> Add Student</a>
+      </div>
+      <div class="card p-3 mb-3">
+        <div class="row g-2">
+          <div class="col-12 col-md-4"><input id="fSearch" class="form-control" placeholder="Search name, roll no or email"></div>
+          <div class="col-6 col-md-2"><select id="fDept" class="form-select"><option value="">All Departments</option></select></div>
+          <div class="col-6 col-md-2"><select id="fYear" class="form-select"><option value="">All Years</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+          <div class="col-6 col-md-2"><select id="fGender" class="form-select"><option value="">All Genders</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+          <div class="col-6 col-md-2"><select id="fSort" class="form-select">
+            <option value="studentId|desc">Newest first</option><option value="name|asc">Name A-Z</option>
+            <option value="rollNo|asc">Roll No</option><option value="year|asc">Year</option></select></div>
+          <div class="col-12"><button id="resetBtn" class="btn btn-sm btn-outline-secondary">Reset filters</button></div>
+        </div>
+      </div>
+      <div class="card p-3">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead><tr><th>Roll No</th><th>Name</th><th>Email</th><th>Phone</th><th>Dept</th><th>Year</th><th>Gender</th><th>Actions</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <div class="d-flex flex-wrap justify-content-between align-items-center mt-3 gap-2">
+          <small class="text-muted" id="info"></small>
+          <ul class="pagination pagination-sm mb-0" id="pager"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../components/layout.js"></script>
+<script src="../js/students.js"></script>
+</body>
+</html>

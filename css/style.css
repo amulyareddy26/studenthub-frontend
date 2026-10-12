@@ -1,0 +1,24 @@
+:root { --sidebar-w: 250px; --brand: #4f46e5; --brand-dark: #3730a3; }
+body { background: #f4f6fb; font-family: "Segoe UI", system-ui, sans-serif; }
+.app { display: flex; min-height: 100vh; }
+.sidebar { width: var(--sidebar-w); background: #1e1b4b; color: #fff; position: fixed; top: 0; bottom: 0; left: 0; padding: 1rem; overflow-y: auto; z-index: 1040; transition: transform .25s; }
+.sidebar .brand { font-size: 1.4rem; font-weight: 700; padding: .5rem .75rem 1.25rem; }
+.sidebar a { display: flex; align-items: center; gap: .75rem; color: #c7d2fe; text-decoration: none; padding: .65rem .9rem; border-radius: .6rem; margin-bottom: .25rem; }
+.sidebar a:hover, .sidebar a.active { background: var(--brand); color: #fff; }
+.main { margin-left: var(--sidebar-w); flex: 1; min-width: 0; }
+.topbar { background: #fff; padding: .75rem 1.25rem; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,.08); position: sticky; top: 0; z-index: 1030; }
+.content { padding: 1.5rem; }
+.card { border: 0; border-radius: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+.kpi .icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+.btn-brand { background: var(--brand); border-color: var(--brand); color: #fff; }
+.btn-brand:hover { background: var(--brand-dark); border-color: var(--brand-dark); color: #fff; }
+.avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; }
+.login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1e1b4b, #4f46e5); padding: 1rem; }
+.login-card { width: 100%; max-width: 420px; border-radius: 1.25rem; }
+.table-responsive { overflow-x: auto; }
+@media (max-width: 991.98px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: none; }
+  .main { margin-left: 0; }
+}
+@media print { .sidebar, .topbar, .no-print { display: none !important; } .main { margin: 0; } }
